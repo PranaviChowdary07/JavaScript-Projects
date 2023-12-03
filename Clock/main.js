@@ -12,5 +12,5 @@ setInterval(
         document.getElementById("sec-hand").style.transform ="rotate(" + second + "deg)";
         document.getElementById("minute-hand").style.transform ="rotate(" + minute + "deg)";
         document.getElementById("hour-hand").style.transform ="rotate(" + hour + "deg)";
-    }
+    },1000
 );
