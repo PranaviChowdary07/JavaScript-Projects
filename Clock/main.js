@@ -1,10 +1,16 @@
-let hrHand = document.querySelector(".hr-hand");
-let minHand = document.querySelector(".min-hand");
-let secHand = document.querySelector(".sec-hand");
+var second = 0;
+var minute = 0;
+var hour = 0;
+var d = new Date();
 
-setInterval(updateTime, 1000);
-function updateTime() {
-    let date = new Date();
-    secHand.style.transform = 'rotate(${date.getSeconds() * 6}deg)'
-}
-
+setInterval(
+    function() {
+        d = new Date();
+        second = d.getSeconds() * 6;
+        minute = d.getMinutes() * 6;
+        hour = d.getHours() * 30 + Math.round(minute/12);
+        document.getElementById("sec-hand").style.transform ="rotate(" + second + "deg)";
+        document.getElementById("minute-hand").style.transform ="rotate(" + minute + "deg)";
+        document.getElementById("hour-hand").style.transform ="rotate(" + hour + "deg)";
+    }
+);
